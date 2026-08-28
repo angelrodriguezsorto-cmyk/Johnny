@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#87ceeb">
+  <title>Johnny, querido, chiquillo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="floating-hearts" aria-hidden="true"></div>
+
+  <main>
+    <section class="hero reveal">
+      <div class="hero-glow"></div>
+      <p class="eyebrow">Una pequeña carta hecha con mucho cariño</p>
+      <h1>Johnny, querido,<br><span>chiquillo</span></h1>
+      <p class="hero-subtitle">Para ti, porque hay personas que llegan y hacen que los días se sientan diferentes.</p>
+      <a class="scroll-btn" href="#carta">Leer la carta ↓</a>
+    </section>
+
+    <section id="contador" class="section reveal">
+      <div class="section-heading">
+        <span>⏳</span>
+        <h2>Desde noviembre de 2024</h2>
+        <p>Y cada segundo sigue contando.</p>
+      </div>
+      <div class="timer-card">
+        <div class="time-box"><strong id="years">0</strong><span>años</span></div>
+        <div class="time-box"><strong id="months">0</strong><span>meses</span></div>
+        <div class="time-box"><strong id="days">0</strong><span>días</span></div>
+        <div class="time-box"><strong id="hours">0</strong><span>horas</span></div>
+        <div class="time-box"><strong id="minutes">0</strong><span>minutos</span></div>
+        <div class="time-box accent"><strong id="seconds">0</strong><span>segundos</span></div>
+      </div>
+      
+    </section>
+
+    <section id="carta" class="section letter-section reveal">
+      <div class="paper">
+        <div class="seal">♥</div>
+        <p class="letter-kicker">De Abigail para Johnny</p>
+        <h2>Mi carta para ti</h2>
+        <div class="letter-body">
+          <p>Querido Johnny:</p>
+          <p>Quería dejarte algo que pudieras volver a leer cuando quisieras, un pequeño rincón donde quedaran guardadas algunas de las cosas que siento por ti.</p>
+          <p>Me gusta pensar en todo lo que hemos compartido, en las conversaciones, las risas, los detalles y hasta en esos momentos que nos han enseñado a conocernos un poquito más. Cada uno ha ido formando una historia que para mí tiene un valor enorme.</p>
+          <p>Gracias por estar, por escucharme y por hacer espacio para mí en tu vida. No necesito que todo sea perfecto; me basta con que podamos seguir construyendo algo bonito con cariño, respeto, paciencia y sinceridad.</p>
+          <p>Si algún día dudas de lo importante que eres para mí, vuelve a esta carta. Aquí queda una pequeña prueba de todo ese cariño que a veces cuesta poner en palabras.</p>
+          <p>Con muchísimo cariño,<br><strong>Abigail</strong> ♥</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="section-heading">
+        <span>🌹</span>
+        <h2>Razones por las que te quiero</h2>
+        <p>Algunas de tantas...</p>
+      </div>
+      <div class="reasons-grid">
+        <article class="reason"><span>01</span><h3>Por tu forma de ser</h3><p>Porque tienes una manera especial de dejar huella en mis días.</p></article>
+        <article class="reason"><span>02</span><h3>Por las pequeñas cosas</h3><p>Los detalles sencillos también pueden convertirse en recuerdos enormes.</p></article>
+        <article class="reason"><span>03</span><h3>Por hacerme sonreír</h3><p>Hay momentos contigo que simplemente consiguen cambiarme el ánimo.</p></article>
+        <article class="reason"><span>04</span><h3>Por cómo me haces sentir</h3><p>Porque contigo puedo compartir partes de mí que valoro muchísimo.</p></article>
+        <article class="reason"><span>05</span><h3>Por lo que estamos construyendo</h3><p>Me gusta que nuestra historia tenga espacio para crecer, aprender y mejorar.</p></article>
+        <article class="reason"><span>06</span><h3>Por ser tú</h3><p>Sin una explicación complicada: simplemente me alegra tenerte en mi vida.</p></article>
+      </div>
+    </section>
+
+    <section class="section memory-grid reveal">
+      <div class="photo-card">
+        <div class="photo-placeholder" id="photoPlaceholder">
+          <span style="font-size: 30px;">📷</span>
+
+          <small><img src="johnny.jpeg" alt="johnny"></small>
+        </div>
+        <input id="photoInput" type="file" accept="image/*" hidden>
+
+      </div>
+
+      <div class="song-card">
+  <div class="music-icon">🎵</div>
+  <h2>Nuestra canción</h2>
+  <p>Subiendo el volumen de los buenos momentos...</p>
+  
+  <!-- CORREGIDO: Añadimos la canción directamente y la propiedad loop -->
+  <audio id="audioPlayer" src="cansion.mp3" controls loop></audio>
+  <p class="song-name" id="songName">♪ Cargando melodía...</p>
+</div>
+
+      </div>
+    </section>
+
+    <section class="surprise reveal" id="surprise">
+      <div class="surprise-card">
+        <span class="gift">🎁</span>
+        <p class="eyebrow">Llegaste hasta el final...</p>
+        <h2>Hay algo para ti</h2>
+        <p class="surprise-text" id="surpriseText">Presiona el botón. Prometo que vale la pena. ✨</p>
+        <button class="surprise-btn" id="surpriseBtn">Abrir sorpresa 💗</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>Hecho con cariño · Noviembre 2024 → hoy</footer>
+  <script src="script.js"></script>
+</body>
+</html>
