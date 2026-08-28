@@ -372,61 +372,71 @@ footer {
 
 }
 
-
-/* ... tus otros estilos de la página ... */
-
-.song-card.structural-card {
-  position: relative;
-  background: linear-gradient(135deg, #ffffff 0%, #f7fafd 100%);
-  border: 1px solid rgba(135, 206, 235, 0.2);
-  border-radius: 24px;
-  padding: 40px 30px;
-  box-shadow: 0 15px 35px rgba(135, 206, 235, 0.15);
-  overflow: hidden;
+/* Contenedor principal estilo Spotify */
+.spotify-card {
+  background: linear-gradient(180deg, #242424 0%, #121212 100%);
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  max-width: 340px;
+  margin: 20px auto;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  box-sizing: border-box;
   text-align: center;
-  transition: transform 0.3s ease;
 }
 
-.song-card.structural-card:hover {
-  transform: translateY(-5px);
+/* Contenedor de la Imagen Cuadrada */
+.album-cover-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  background-color: #282828;
 }
 
-.pulse-animation {
-  animation: floatMelody 3s ease-in-out infinite alternate;
+.album-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-@keyframes floatMelody {
-  0% { transform: translateY(0) scale(1) rotate(-5deg); }
-  100% { transform: translateY(-10px) scale(1.05) rotate(5deg); }
+/* Textos de la Canción (Alineados a la izquierda como la app) */
+.song-meta {
+  text-align: left;
+  margin-bottom: 20px;
+  padding-left: 5px;
 }
 
-.play-trigger-btn {
-  background: linear-gradient(135deg, #87ceeb 0%, #6baed6 100%);
-  color: white;
-  border: none;
-  padding: 12px 28px;
-  font-family: 'Poppins', sans-serif;
+.track-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #ffffff;
+}
+
+.track-artist {
+  font-size: 14px;
+  color: #b3b3b3;
+  margin: 0;
+}
+
+/* El reproductor de audio nativo adaptado al ancho */
+.spotify-card audio {
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 30px;
+}
+
+/* El texto inferior interactivo */
+.spotify-card .song-name {
+  font-size: 12px;
+  color: #1db954; /* El clásico verde Spotify */
+  margin: 5px 0 0 0;
   font-weight: 500;
-  font-size: 15px;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 6px 15px rgba(135, 206, 235, 0.4);
-  transition: all 0.3s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  letter-spacing: 0.5px;
 }
 
-.active-melody {
-  margin-top: 20px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  color: #c9354d;
-  font-weight: 500;
-  animation: pulseText 1.5s infinite alternate;
-}
-
-@keyframes pulseText {
-  0% { opacity: 0.7; }
-  100% { opacity: 1; }
-}

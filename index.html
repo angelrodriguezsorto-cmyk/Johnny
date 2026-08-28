@@ -83,25 +83,41 @@
 
       </div>
 
-     <div class="song-card structural-card">
-  <div class="music-glow"></div>
+     <div class="spotify-card">
+  <!-- Carátula del álbum (Guarda una foto cuadrada bonita con el nombre 'caratula.jpg') -->
+  <div class="album-cover-wrapper">
+    <img src="caratula.jpg" alt="Carátula" class="album-cover" id="albumCover">
+  </div>
   
-  <!-- Icono de nota musical con clase para animarlo -->
-  <div class="music-icon pulse-animation" id="musicVisual">🎵</div>
-  
-  <h2>Nuestra canción</h2>
-  <p class="song-sub">Un pedacito de nosotros en una melodía.</p>
-  
-  <!-- Mantenemos el audio oculto para usar nuestro propio botón estético -->
-  <audio id="audioPlayer" src="cansion.mp3" loop></audio>
-  
-  <div class="player-controls">
-    <button id="customPlayBtn" class="play-trigger-btn">
-      <span class="icon">⏸</span> <span class="text-state">Pausar música</span>
-    </button>
+  <!-- Información del tema -->
+  <div class="song-meta">
+    <div class="text-group">
+      <h3 class="track-title">When I Was Fallin' in Love</h3>
+      <p class="track-artist">Rick Parfitt</p>
+    </div>
+    <button class="heart-icon-btn">❤️</button>
   </div>
 
-  <p class="song-name active-melody" id="songName">♪ Sonando de fondo...</p>
+  <!-- Audio oculto -->
+  <audio id="audioPlayer" src="cansion.mp3" loop></audio>
+
+  <!-- Barra de progreso estética -->
+  <div class="progress-container">
+    <span class="time-stamp" id="currentTime">0:00</span>
+    <div class="progress-bar-bg" id="progressBg">
+      <div class="progress-bar-fill" id="progressFill"></div>
+    </div>
+    <span class="time-stamp" id="totalTime">3:20</span>
+  </div>
+
+  <!-- Controles tipo Spotify -->
+  <div class="player-controls-row">
+    <button class="control-sub-btn">🔀</button>
+    <button class="control-sub-btn">⏮</button>
+    <button id="customPlayBtn" class="spotify-play-btn">⏸</button>
+    <button class="control-sub-btn">⏭</button>
+    <button class="control-sub-btn">🔁</button>
+  </div>
 </div>
 
 
