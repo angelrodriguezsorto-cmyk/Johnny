@@ -324,6 +324,7 @@ footer {
   animation: floatUp linear forwards;
 }
 
+
 @keyframes floatUp {
   0% { transform: translateY(0) rotate(0deg); opacity: 0; }
   15% { opacity: .7; }
@@ -369,4 +370,63 @@ footer {
   max-height: 500px;
 }
 
+}
+
+
+/* ... tus otros estilos de la página ... */
+
+.song-card.structural-card {
+  position: relative;
+  background: linear-gradient(135deg, #ffffff 0%, #f7fafd 100%);
+  border: 1px solid rgba(135, 206, 235, 0.2);
+  border-radius: 24px;
+  padding: 40px 30px;
+  box-shadow: 0 15px 35px rgba(135, 206, 235, 0.15);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.song-card.structural-card:hover {
+  transform: translateY(-5px);
+}
+
+.pulse-animation {
+  animation: floatMelody 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatMelody {
+  0% { transform: translateY(0) scale(1) rotate(-5deg); }
+  100% { transform: translateY(-10px) scale(1.05) rotate(5deg); }
+}
+
+.play-trigger-btn {
+  background: linear-gradient(135deg, #87ceeb 0%, #6baed6 100%);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(135, 206, 235, 0.4);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.active-melody {
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  color: #c9354d;
+  font-weight: 500;
+  animation: pulseText 1.5s infinite alternate;
+}
+
+@keyframes pulseText {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
 }

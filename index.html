@@ -83,14 +83,27 @@
 
       </div>
 
-      <div class="song-card">
-  <div class="music-icon">🎵</div>
-  <h2>Nuestra canción</h2>
+     <div class="song-card structural-card">
+  <div class="music-glow"></div>
   
-  <!-- CORREGIDO: Añadimos la canción directamente y la propiedad loop -->
-  <audio id="audioPlayer" src="cansion.mp3" controls loop></audio>
-  <p class="song-name" id="songName">♪ Cargando melodía...</p>
+  <!-- Icono de nota musical con clase para animarlo -->
+  <div class="music-icon pulse-animation" id="musicVisual">🎵</div>
+  
+  <h2>Nuestra canción</h2>
+  <p class="song-sub">Un pedacito de nosotros en una melodía.</p>
+  
+  <!-- Mantenemos el audio oculto para usar nuestro propio botón estético -->
+  <audio id="audioPlayer" src="mi-cancion.mp3" loop></audio>
+  
+  <div class="player-controls">
+    <button id="customPlayBtn" class="play-trigger-btn">
+      <span class="icon">⏸</span> <span class="text-state">Pausar música</span>
+    </button>
+  </div>
+
+  <p class="song-name active-melody" id="songName">♪ Sonando de fondo...</p>
 </div>
+
 
       </div>
     </section>

@@ -100,8 +100,6 @@ if (photoPlaceholder && photoInput) {
 // ==========================================
 // CONFIGURACIÓN DE MÚSICA AUTOMÁTICA
 // ==========================================
-const audioPlayer = document.getElementById("audioPlayer");
-const songName = document.getElementById("songName");
 
 if (audioPlayer) {
   // Ponemos el nombre de la canción visible cuando cargue
@@ -141,4 +139,59 @@ if (surpriseBtn && surpriseText) {
           setTimeout(createHeart, i * 80);
       }
   });
+}
+
+
+// ... todo el código anterior del contador, revelaciones, corazones y fotos ...
+
+// ==========================================
+// CONFIGURACIÓN DE MÚSICA AUTOMÁTICA
+// ==========================================
+const audioPlayer = document.getElementById("audioPlayer");
+const songName = document.getElementById("songName");
+const customPlayBtn = document.getElementById("customPlayBtn");
+const musicVisual = document.getElementById("musicVisual");
+
+if (audioPlayer && customPlayBtn) {
+  const btnIcon = customPlayBtn.querySelector(".icon");
+  const btnText = customPlayBtn.querySelector(".text-state");
+
+  function actualizarInterfazPlayer() {
+    if (audioPlayer.paused) {
+      if (btnIcon) btnIcon.textContent = "▶";
+      if (btnText) btnText.textContent = "Escuchar música";
+      if (songName) songName.textContent = "♪ Música en pausa";
+      if (musicVisual) musicVisual.classList.remove("pulse-animation");
+    } else {
+      if (btnIcon) btnIcon.textContent = "⏸";
+      if (btnText) btnText.textContent = "Pausar música";
+      if (songName) songName.textContent = "♪ Sonando de fondo...";
+      if (musicVisual) musicVisual.classList.add("pulse-animation");
+    }
+  }
+
+  customPlayBtn.addEventListener("click", () => {
+    if (audioPlayer.paused) {
+      audioPlayer.play();
+    } else {
+      audioPlayer.pause();
+    }
+    actualizarInterfazPlayer();
+  });
+
+  audioPlayer.play()
+    .then(() => {
+      actualizarInterfazPlayer();
+    })
+    .catch(() => {
+      const iniciarMusica = () => {
+        audioPlayer.play().then(() => {
+          actualizarInterfazPlayer();
+        });
+        document.removeEventListener("click", iniciarMusica);
+        document.removeEventListener("scroll", iniciarMusica);
+      };
+      document.addEventListener("click", iniciarMusica);
+      document.addEventListener("scroll", iniciarMusica);
+    });
 }
